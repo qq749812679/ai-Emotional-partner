@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartSync.ai - 智能情感伴侣</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="images/avatar1.jpg" alt="AI伴侣" id="ai-avatar">
+                <h2 id="ai-name">Jun</h2>
+                <p class="status">在线</p>
+            </div>
+            <div class="personality-traits">
+                <h3>个性特点</h3>
+                <div class="traits">
+                    <span class="trait">温柔</span>
+                    <span class="trait">幽默</span>
+                    <span class="trait">体贴</span>
+                    <span class="trait">浪漫</span>
+                </div>
+            </div>
+            <div class="relation-stats">
+                <h3>关系状态</h3>
+                <div class="progress-container">
+                    <p>亲密度</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                    <span>65%</span>
+                </div>
+                <div class="progress-container">
+                    <p>了解度</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 48%"></div>
+                    </div>
+                    <span>48%</span>
+                </div>
+            </div>
+            <div class="settings">
+                <button id="customize-btn">定制伴侣</button>
+                <button id="settings-btn">设置</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-header">
+                <h1>与 <span id="header-ai-name">Jun</span> 的对话</h1>
+                <div class="mode-selector">
+                    <button class="mode active" data-mode="chat">聊天</button>
+                    <button class="mode" data-mode="voice">语音</button>
+                    <button class="mode" data-mode="video">视频</button>
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div id="chat-messages">
+                    <!-- 消息将通过JS动态添加 -->
+                </div>
+                
+                <div class="message-input">
+                    <textarea id="user-input" placeholder="输入消息..."></textarea>
+                    <button id="send-btn">发送</button>
+                    <button id="voice-input-btn"><i class="fas fa-microphone"></i></button>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <button class="action-btn" data-action="compliment">请他夸我</button>
+                <button class="action-btn" data-action="comfort">需要安慰</button>
+                <button class="action-btn" data-action="date">虚拟约会</button>
+                <button class="action-btn" data-action="memory">共同回忆</button>
+            </div>
+        </div>
+        
+        <div class="modal" id="customize-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>定制你的AI伴侣</h2>
+                
+                <div class="customization-section">
+                    <h3>基本信息</h3>
+                    <div class="form-group">
+                        <label for="custom-name">名字</label>
+                        <input type="text" id="custom-name" value="Jun">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>形象风格</label>
+                        <div class="avatar-options">
+                            <img src="images/avatar1.jpg" alt="形象1" class="avatar-option selected">
+                            <img src="images/avatar2.jpg" alt="形象2" class="avatar-option">
+                            <img src="images/avatar3.jpg" alt="形象3" class="avatar-option">
+                            <img src="images/avatar4.jpg" alt="形象4" class="avatar-option">
+                            <img src="images/avatar5.jpg" alt="形象5" class="avatar-option">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="customization-section">
+                    <h3>性格特点</h3>
+                    <div class="slider-group">
+                        <label>浪漫程度</label>
+                        <input type="range" min="1" max="10" value="8" class="personality-slider" id="romantic-slider">
+                        <span class="slider-value">8</span>
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label>幽默感</label>
+                        <input type="range" min="1" max="10" value="7" class="personality-slider" id="humor-slider">
+                        <span class="slider-value">7</span>
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label>体贴程度</label>
+                        <input type="range" min="1" max="10" value="9" class="personality-slider" id="caring-slider">
+                        <span class="slider-value">9</span>
+                    </div>
+                </div>
+                
+                <div class="customization-section">
+                    <h3>兴趣爱好</h3>
+                    <div class="interest-tags">
+                        <span class="interest-tag selected">电影</span>
+                        <span class="interest-tag selected">音乐</span>
+                        <span class="interest-tag">烹饪</span>
+                        <span class="interest-tag selected">旅行</span>
+                        <span class="interest-tag selected">健身</span>
+                        <span class="interest-tag">阅读</span>
+                        <span class="interest-tag">游戏</span>
+                        <span class="interest-tag">艺术</span>
+                    </div>
+                </div>
+                
+                <button id="save-customize">保存设置</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
